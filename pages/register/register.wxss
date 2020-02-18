@@ -1,1 +1,63 @@
 /* pages/register/register.wxss */
+.page{
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+/*用户注册文字*/
+.weui__hd{
+  margin-top: 8%;
+}
+
+.register-text{
+  font-weight: bold;
+  font-size: larger;
+}
+
+/*表单内容*/
+.weui__bd{
+  margin-top: 20px;
+  flex: auto;
+  height: 100%
+}
+
+.all-input{
+  width: 90%;
+  height: 80rpx;
+  margin: 0 auto;
+    margin-top: 35rpx;
+  border: 1px solid #ccc;
+  border-radius: 50rpx;
+  display: flex;
+}
+
+/*输入框的小图标*/
+.netname-icon, .name-icon, .telephone-icon, .account-icon, .pwd-icon{
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+/*注册按钮*/
+.register-btn{
+  height: 80rpx;
+  margin-top: 80rpx;
+}
+
+/*返回登录*/
+.login-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.register-nav{
+  font-size: smaller;
+  color: #808080;
+}
