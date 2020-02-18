@@ -1,2 +1,38 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class="container">
+    <view class="login-header">
+      <text class="login-text">用户登录</text>
+    </view>
+
+    <view class="login-form">
+      <form class="submit-form" bindsubmit="formSubmit">
+      <!--账号-->
+        <view class="user-no">
+          <view class="weui-cell weui-cell_input">
+            <image class="no-input-img" src="/image/login/user.png"></image>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="userNo" bindinput="" type="number" placeholder="请输入账号" />
+            </view>
+          </view>
+        </view>
+      <!--密码-->
+        <view class="user-pwd">
+          <view class="weui-cell weui-cell_input">
+            <image class="pwd-input-img" src="/image/login/password.png"/>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="userPwd" bindinput="" placeholder="请输入密码" />
+            </view>
+          </view>
+        </view>
+      <!--按钮-->
+        <view class="weui-cell__bd login-btn">
+          <button class="weui-btn" type="primary" form-type="submit">立即登录</button>
+        </view>
+      </form>
+
+    <view class="register-view">
+      <navigator class="register-nav">---立即注册---</navigator>
+    </view>  
+
+    </view>
+</view>
