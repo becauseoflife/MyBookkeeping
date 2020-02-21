@@ -1,0 +1,22 @@
+<!--pages/home/home.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="today_view">
+      <view>今日</view>
+      <view class="today_cost">￥:100</view>
+    </view>
+    <view class="month_view">
+      <view>本月</view>
+      <view class="month_cost">￥:100</view>
+    </view>
+    <view class="year_view">
+      <view>本年</view>
+      <view class="year_cost">￥:100</view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary">我又花钱了</button>
+    <button class="weui-btn" type="primary">查看历史记录</button>
+    <button class="weui-btn" type="primary">支出饼图汇总</button>
+  </view>
+</view>

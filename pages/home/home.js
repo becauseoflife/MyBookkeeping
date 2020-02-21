@@ -1,4 +1,4 @@
-// pages/login/login.js
+// pages/home/home.js
 Page({
 
   /**
@@ -6,17 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  login:function(e){
-   wx.switchTab({
-     url: '/pages/home/home',
-   })
-  },
-  formSubmit:function(e){
-    wx.switchTab({
-      url: '/pages/home/home',
-    })
   },
 
   /**

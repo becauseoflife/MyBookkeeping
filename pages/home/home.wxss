@@ -1,0 +1,43 @@
+/* pages/home/home.wxss */
+.page{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*显示文字*/
+.page__hd{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20%;
+}
+
+.today_view, .month_view, .year_view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.today_cost{
+  margin-top: 15rpx;
+  color: blue;
+} 
+.month_cost{
+  margin-top: 15rpx;
+  color: red;
+} 
+.year_cost{
+  margin-top: 15rpx;
+  color: green;
+}
+
+/* 按钮 */
+.page__bd{
+  position: fixed;
+  bottom: 60rpx;
+  align-items: center;
+  left: 0;
+  right: 0;
+}

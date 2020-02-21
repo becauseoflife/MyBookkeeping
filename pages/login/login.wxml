@@ -26,7 +26,7 @@
         </view>
       <!--登录按钮-->
         <view class="weui-cell__bd login-btn">
-          <button class="weui-btn" type="primary" form-type="submit">立即登录</button>
+          <button class="weui-btn" type="primary" form-type="submit" bindtap="login">立即登录</button>
         </view>
       </form>
     <!--注册-->
