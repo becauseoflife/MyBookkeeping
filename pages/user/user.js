@@ -8,6 +8,14 @@ Page({
 
   },
 
+  // 退出登录
+  outLogin:function(){
+    wx.navigateTo({
+      url: '../login/login',
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */

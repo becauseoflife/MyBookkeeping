@@ -15,8 +15,8 @@
     </view>
   </view>
   <view class="page__bd page__bd_spacing">
-    <button class="weui-btn" type="primary">我又花钱了</button>
-    <button class="weui-btn" type="primary">查看历史记录</button>
-    <button class="weui-btn" type="primary">支出饼图汇总</button>
+    <button class="weui-btn" type="primary" bindtap="recordEspend">我又花钱了</button>
+    <button class="weui-btn" type="primary" bindtap="lookRecord">查看历史记录</button>
+    <button class="weui-btn" type="primary" bindtap="lookPieChart">支出饼图汇总</button>
   </view>
 </view>

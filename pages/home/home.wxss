@@ -22,15 +22,15 @@
 
 .today_cost{
   margin-top: 15rpx;
-  color: blue;
+  color: green;
 } 
 .month_cost{
   margin-top: 15rpx;
-  color: red;
+  color: blue;
 } 
 .year_cost{
   margin-top: 15rpx;
-  color: green;
+  color: red;
 }
 
 /* 按钮 */

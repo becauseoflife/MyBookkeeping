@@ -8,6 +8,25 @@ Page({
 
   },
 
+  //跳转到记账界面
+  recordEspend:function(){
+    wx.navigateTo({
+      url: '../bookkeeping/bookkeeping',
+    })
+  },
+  // 跳转到历史记录界面
+  lookRecord:function(){
+    wx.navigateTo({
+      url: '../record/record',
+    })
+  },
+  // 跳转到饼状图
+  lookPieChart:function(){
+    wx.navigateTo({
+      url: '',
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
