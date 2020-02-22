@@ -1,0 +1,44 @@
+/* pages/savemoney/savemoney.wxss */
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*显示文字*/
+.page__hd{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+}
+
+.money-view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.savemoney{
+  margin-top: 15rpx;
+  color: red;
+}
+
+/*输入框 */
+.input_view{
+  width: 57%;
+  height: 80rpx;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+}
+
+/*提交按钮*/
+.btn-view{
+  margin-top: 8%;
+}

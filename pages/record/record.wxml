@@ -1,0 +1,25 @@
+<!--pages/record/record.wxml-->
+<view class="page">
+  <view class="page__hd">
+      <view class="weui-form-preview">
+          <view class="weui-form-preview__hd">
+              <view class="weui-form-preview__label">付款金额</view>
+              <view class="weui-form-preview__value_in-hd">¥2400.00</view>
+          </view>
+          <view class="weui-form-preview__bd">
+              <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">时间</view>
+                  <view class="weui-form-preview__value">2017-05-05 17:55</view>
+              </view>
+              <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">用途</view>
+                  <view class="weui-form-preview__value">餐饮</view>
+              </view>
+          </view>
+          <view class="weui-form-preview__ft">
+              <navigator class="weui-form-preview__btn weui-form-preview__btn_default update-btn" hover-class="weui-form-preview__btn_active">修改</navigator>
+              <navigator class="weui-form-preview__btn weui-form-preview__btn_primary delete-btn" hover-class="weui-form-preview__btn_active">删除</navigator>
+          </view>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/savemoney/savemoney.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="money-view">
+      <view>总额度</view>
+      <view class="savemoney">￥10000</view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cell__bd input_view">
+      <input class="weui-input" name="userNo" bindinput="" type="number" placeholder="请输入心愿存钱数" />
+    </view>
+    <view class="btn-view">
+      <button class="weui-btn" type="primary">点击提交</button>
+    </view>
+  </view>
+</view>

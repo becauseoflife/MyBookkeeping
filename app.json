@@ -1,12 +1,18 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/register/register",
     "pages/home/home",
     "pages/news/news",
     "pages/user/user",
-    "pages/login/login",
+    "pages/record/record",
+    "pages/bookkeeping/bookkeeping",
+    "pages/limit/limit",
+    "pages/savemoney/savemoney",
+
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/register/register"
+    "pages/logs/logs"
+    
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -15,10 +21,10 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-      "pagePath": "pages/home/home",
-      "text": "首页",
-      "iconPath": "image/icon_home.png",
-      "selectedIconPath": "image/icon_home_HL.png"
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "image/icon_home.png",
+        "selectedIconPath": "image/icon_home_HL.png"
       },
       {
         "pagePath": "pages/news/news",

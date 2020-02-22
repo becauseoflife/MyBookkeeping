@@ -1,0 +1,24 @@
+/* pages/record/record.wxss */
+page{
+  background-color:#EDEDED; 
+}
+
+/**/
+.weui-form-preview__hd{
+  padding: 5px;
+}
+.weui-form-preview__bd {
+  padding: 5px;
+}
+
+.weui-form-preview__ft{
+  line-height: 50px;
+}
+
+.update-btn{
+  color: blue
+}
+
+.delete-btn{
+  color: red;
+}
