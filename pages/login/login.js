@@ -9,14 +9,14 @@ Page({
   },
 
   login:function(e){
-   wx.switchTab({
-     url: '/pages/home/home',
+    var code = 1000;
+   wx.request({
+     url: 'http://192.168.1.89:8080/wxLogin?code=' + code, 
+     method: "POST",
+     success: function(res){
+       console.log(res);
+     }
    })
-  },
-  formSubmit:function(e){
-    wx.switchTab({
-      url: '/pages/home/home',
-    })
   },
 
   /**

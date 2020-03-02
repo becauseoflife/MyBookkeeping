@@ -5,13 +5,13 @@
   </view>
   <view class="weui__bd">
   <!--表单-->
-    <form class="submit-form" bindsubmit="">
+    <form class="submit-form" bindsubmit="registerSubmit">
       <!--昵称输入框-->
       <view class="all-input">
         <view class="weui-cell weui-cell__input">
           <image class="netname-icon" src="/image/user.png" ></image>
           <view class="weui-cell__bd"> 
-            <input class="weui-cell__input" placeholder="请输入昵称"></input>
+            <input name="netName" type="text" class="weui-cell__input" placeholder="请输入昵称"></input>
           </view>
         </view>
       </view>
@@ -20,7 +20,7 @@
         <view class="weui-cell weui-cell__input">
           <image class="name-icon" src="/image/user.png" ></image>
           <view class="weui-cell__bd"> 
-            <input class="weui-cell__input" placeholder="请输入真实姓名"></input>
+            <input name="name" type="text" class="weui-cell__input" placeholder="请输入真实姓名"></input>
           </view>
         </view>
       </view>
@@ -29,7 +29,7 @@
         <view class="weui-cell weui-cell__input">
           <image class="telephone-icon" src="/image/telephone.png" ></image>
           <view class="weui-cell__bd"> 
-            <input class="weui-cell__input"  placeholder="请输入电话号码"></input>
+            <input name="telephone" type="number" class="weui-cell__input"  placeholder="请输入电话号码"></input>
           </view>
         </view>
       </view>
@@ -38,7 +38,7 @@
         <view class="weui-cell weui-cell__input">
           <image class="account-icon" src="/image/user.png" ></image>
           <view class="weui-cell__bd"> 
-            <input class="weui-cell__input" placeholder="请输入账号"></input>
+            <input name="account" type="number" class="weui-cell__input" placeholder="请输入账号"></input>
           </view>
         </view>
       </view>
@@ -47,7 +47,7 @@
         <view class="weui-cell weui-cell__input">
           <image class="pwd-icon" src="/image/password.png" ></image>
           <view class="weui-cell__bd"> 
-            <input class="weui-cell__input" placeholder="请输入密码"></input>
+            <input name="password_one" password type="text" class="weui-cell__input" placeholder="请输入密码"></input>
           </view>
         </view>
       </view>
@@ -56,14 +56,14 @@
         <view class="weui-cell weui-cell__input">
           <image class="pwd-icon" src="/image/password.png" ></image>
           <view class="weui-cell__bd"> 
-            <input class="weui-cell__input" placeholder="请输入密码"></input>
+            <input name="password_two" password type="text" class="weui-cell__input" placeholder="请输入密码"></input>
           </view>
         </view>
       </view>
       <!--注册按钮-->
-        <view class="weui-cell__bd register-btn">
-          <button class="weui-btn" type="primary" form-type="submit">立即注册</button>
-        </view>
+      <view class="weui-cell__bd register-btn">
+        <button class="weui-btn" type="primary" form-type="submit">立即注册</button>
+      </view>
     </form>
 
     <!--已有账号-->
