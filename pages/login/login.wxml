@@ -5,13 +5,13 @@
     </view>
 
     <view class="login-form">
-      <form class="submit-form" bindsubmit="formSubmit">
+      <form class="submit-form" bindsubmit="loginSubmit">
       <!--账号-->
         <view class="user-no">
           <view class="weui-cell weui-cell_input">
             <image class="no-input-img" src="/image/user.png"></image>
             <view class="weui-cell__bd">
-              <input class="weui-input" name="userNo" bindinput="" type="number" placeholder="请输入账号" />
+              <input class="weui-input" name="account" bindinput="" type="number" placeholder="请输入账号" />
             </view>
           </view>
         </view>
@@ -20,13 +20,13 @@
           <view class="weui-cell weui-cell_input">
             <image class="pwd-input-img" src="/image/password.png"/>
             <view class="weui-cell__bd">
-              <input class="weui-input" type="password" name="userPwd" bindinput="" placeholder="请输入密码" />
+              <input class="weui-input" type="password" name="password" bindinput="" placeholder="请输入密码" />
             </view>
           </view>
         </view>
       <!--登录按钮-->
         <view class="weui-cell__bd login-btn">
-          <button class="weui-btn" type="primary" form-type="submit" bindtap="login">立即登录</button>
+          <button class="weui-btn" type="primary" form-type="submit">立即登录</button>
         </view>
       </form>
     <!--注册-->

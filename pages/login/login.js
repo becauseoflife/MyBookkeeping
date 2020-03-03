@@ -5,18 +5,75 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    account: '',
+    password: '',
   },
 
-  login:function(e){
-    var code = 1000;
-   wx.request({
-     url: 'http://192.168.1.89:8080/wxLogin?code=' + code, 
-     method: "POST",
-     success: function(res){
-       console.log(res);
-     }
-   })
+    /**
+   * 监听事件函数
+   */
+  loginSubmit:function(e){
+    console.log(e.detail.value);
+    var formData = e.detail.value;
+    var {account, password} = formData;     // 赋值
+    var hint = "";    // 提示框文字
+    // 判断是否输入为空
+    if(!account){
+      hint = "请输入账号";
+    }else if(!password){
+      hint = "请输入密码";
+    }
+    if(hint){
+      wx.showToast({
+        title: hint,
+        icon: 'none',
+        duration: 1000
+      })
+      return;
+    }
+    // 传送至服务器进行检验
+    else{
+      wx.request({
+        url: 'http://192.168.1.89:8080/login',
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          'account': account,
+          'password': password,
+        },
+        success: function (res) {
+          // 收到https服务成功后返回
+          console.log(res.data)
+          // 登录成功
+          if(res.data.status == 200){
+            wx.showToast({
+              title: res.data.data,
+              icon: 'success',
+              duration: 1500
+            });
+            // 跳转回登录界面
+            setTimeout(function () {
+              wx.switchTab({
+                url: '../home/home',
+              })
+            }, 1500);
+          }
+          // 账号不存在 或 密码错误
+          else if(res.data.status == 500){
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        },
+        fail: function () {
+          // 发生网络错误等情况触发
+          console.log("网络请求失败");
+        }
+      })
+      
+    }
   },
 
   /**
