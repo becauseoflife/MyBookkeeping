@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    todayExpend: '0',
+    monthExpend: '0',
+    yearExpend:  '0',
+    todayRecord: [],
   },
 
   //跳转到记账界面

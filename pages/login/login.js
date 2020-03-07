@@ -1,4 +1,6 @@
 // pages/login/login.js
+var app = getApp();
+
 Page({
 
   /**
@@ -34,7 +36,7 @@ Page({
     // 传送至服务器进行检验
     else{
       wx.request({
-        url: 'http://192.168.1.89:8080/login',
+        url: 'http://192.168.1.89:8080/userLogin',
         method: 'POST',
         header: { 'content-type': 'application/x-www-form-urlencoded' },
         data: {
@@ -42,26 +44,40 @@ Page({
           'password': password,
         },
         success: function (res) {
+          var resData = res.data;
           // 收到https服务成功后返回
-          console.log(res.data)
+          console.log(resData);
+          //console.log(resData.data.sessionId);
           // 登录成功
           if(res.data.status == 200){
+            // 显示提示信息
             wx.showToast({
-              title: res.data.data,
+              title: resData.msg,
               icon: 'success',
-              duration: 1500
+              duration: 1000
             });
+
             // 跳转回登录界面
             setTimeout(function () {
               wx.switchTab({
                 url: '../home/home',
               })
             }, 1500);
+
+            // 把 SessionId 和过期时间放在内存中的全局对象和本地缓存里边
+            app.globalData.sessionId = resData.data.sessionId;
+            wx.setStorageSync('SESSIONID', resData.data.sessionId);
+
+            // 登录态保持
+            var expiredTime = resData.data.expiredTime;
+            app.globalData.expiredTime = expiredTime;
+            wx.setStorageSync('EXPIREDTIME', expiredTime);
           }
+
           // 账号不存在 或 密码错误
           else if(res.data.status == 500){
             wx.showToast({
-              title: res.data.msg,
+              title: resData.msg,
               icon: 'none',
               duration: 2000
             })

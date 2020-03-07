@@ -1,45 +1,59 @@
 <!--pages/bookkeeping/bookkeeping.wxml-->
 <view class="page">
-  <view class="page__bd">
-    <view class="weui-cells weui-cells_after-title">
-      <!--日期输入-->
-      <view class="weui-cell ">
-        <image class="date-img" src="/image/date.png"></image>
-        <view class="weui-cell__hd">
-          <view class="weui-label">日期</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-            <view class="weui-input text-color" >{{date}}</view>
-          </picker>
-        </view>
-      </view>
-      <!--花费输入-->
-      <view class="weui-cell ">
-        <image class="date-img" src="/image/money.png"></image>
-        <view class="weui-cell__hd">
-          <view class="weui-label">花费</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input text-color" type="number" placeholder="请输入花费"/>
-        </view>
-      </view>
-      <!--分类输入-->
-      <view class="weui-cell ">
-        <image class="date-img" src="/image/type.png"></image>
-        <view class="weui-cell__hd">
-          <view class="weui-label">分类</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-            <view class="weui-input text-color">{{array[index]}}</view>
-          </picker>
-        </view>
-      </view>
-    </view>
-    <!--完成按钮-->
-    <view class="page__bd page__bd_spacing">
-      <button class="weui-btn" type="primary">完成提交</button>
-    </view>
+    <view class="page__bd">
+        <form bindsubmit="bkpSubmit">
+            <view class="weui-cells weui-cells_after-title">
+                <!--日期输入-->
+                <view class="weui-cell ">
+                    <image class="icon-img" src="/image/date.png"></image>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker name="date" mode="date" value="{{date}}" start="" end="" bindchange="bindDateChange">
+                        <view class="weui-input text-color" >{{date}}</view>
+                    </picker>
+                </view>
+            </view>
+            <!--时间输入-->
+            <view class="weui-cell ">
+                <image class="icon-img" src="/image/time.png"></image>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker name="time" mode="time" value="{{time}}" start="" end="" bindchange="bindTimeChange">
+                        <view class="weui-input text-color" >{{time}}</view>
+                    </picker>
+                </view>
+            </view>
+            <!--花费输入-->
+            <view class="weui-cell ">
+                <image class="icon-img" src="/image/money.png"></image>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">花费</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="cost" value="{{cost}}" class="weui-input text-color" type="number" placeholder="请输入花费"/>
+                </view>
+            </view>
+            <!--分类输入-->
+            <view class="weui-cell ">
+                <image class="icon-img" src="/image/type.png"></image>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">分类</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker name="typeIndex" bindchange="bindPickerChange" value="{{typeIndex}}" range="{{typeArray}}">
+                        <view class="weui-input text-color">{{typeArray[typeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+          </view>
+          <!--完成按钮-->
+          <view class="page__bd page__bd_spacing">
+              <button class="weui-btn" type="primary" form-type="submit">保     存</button>
+          </view>
+      </form>
   </view>
 </view>

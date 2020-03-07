@@ -38,7 +38,7 @@
         <view class="weui-cell weui-cell__input">
           <image class="account-icon" src="/image/user.png" ></image>
           <view class="weui-cell__bd"> 
-            <input name="account" type="number" class="weui-cell__input" placeholder="请输入账号"></input>
+            <input name="account" type="number" class="weui-cell__input" placeholder="请输入账号" value="{{inputAccount}}" ></input>
           </view>
         </view>
       </view>

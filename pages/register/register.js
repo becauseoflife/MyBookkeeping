@@ -10,7 +10,9 @@ Page({
     telephone:'',
     account:'',
     password_one:'',
-    password_two:''
+    password_two:'',
+
+    inputAccount: null,
   },
 
   /**
@@ -18,6 +20,7 @@ Page({
    */
   registerSubmit:function(e){
     console.log(e.detail.value);
+    var that = this;
     var isPostData = false;
     var formData = e.detail.value;
     var {netName, name, telephone, account, password_one, password_two} = formData;
@@ -60,7 +63,7 @@ Page({
     // console.log(isPostData);
     if(isPostData){
       wx.request({
-        url: 'http://192.168.1.89:8080/register',
+        url: 'http://192.168.1.89:8080/userRegister',
         header: { 'content-type': 'application/x-www-form-urlencoded' },
         method: 'POST',
         data:{
@@ -76,7 +79,7 @@ Page({
           // 注册成功
           if(res.data.status == 200){
             wx.showToast({
-              title: res.data.data,
+              title: res.data.msg,
               icon: 'success',
               duration: 1500
             });
@@ -94,7 +97,11 @@ Page({
               title: res.data.msg,
               icon: 'none',
               duration: 2000
-            })
+            });
+            // 清空账号输入框的值
+            that.setData({
+              'inputAccount': '',
+            });
           }
         },
         fail: function () {
@@ -103,7 +110,7 @@ Page({
         }   
       })
     }
-
+  
   },
 
 

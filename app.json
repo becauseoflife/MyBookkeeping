@@ -8,11 +8,7 @@
     "pages/record/record",
     "pages/bookkeeping/bookkeeping",
     "pages/limit/limit",
-    "pages/savemoney/savemoney",
-
-    "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/savemoney/savemoney"
   ],
   "tabBar": {
     "color": "#7A7E83",
