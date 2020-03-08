@@ -68,7 +68,7 @@
 
     <!--已有账号-->
     <view class="login-view">
-      <navigator class="register-nav" url="../login/login">---已有账号---</navigator>
+      <navigator class="register-nav" url="../login/login">---{{'>'}}已有账号{{'<'}}---</navigator>
     </view>
   </view>
 </view>

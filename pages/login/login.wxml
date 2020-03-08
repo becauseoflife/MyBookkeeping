@@ -31,7 +31,7 @@
       </form>
     <!--注册-->
     <view class="register-view">
-      <navigator class="register-nav" url="../register/register">---立即注册---</navigator>
+      <navigator class="register-nav" url="../register/register">---{{'>'}}立即注册{{'<'}}---</navigator>
     </view>  
 
     </view>

@@ -54,6 +54,7 @@ Page({
       })
     }
 
+
     // 发送到服务器保存
     wx.request({
       url: 'http://192.168.1.89:8080/userOperation/saveBookkeeping',
@@ -83,10 +84,10 @@ Page({
             cost: ''
           });
           // 日期更新
-          var nowDate = util.formatDate(new Date());
-          that.setData({
-            date: nowDate
-          });
+          // var nowDate = util.formatDate(new Date());
+          // that.setData({
+          //   date: nowDate
+          // });
           // 时间更新
           var nowTime = util.formatTime(new Date());
           that.setData({

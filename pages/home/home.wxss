@@ -8,28 +8,43 @@
 /*显示文字*/
 .page__hd{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
-  margin-top: 20%;
+  flex-wrap:wrap;
+  margin-top: 10%;
 }
 
 .today_view, .month_view, .year_view{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: first-start;
   align-items: center;
+  margin: 20rpx 40rpx;
+  
+}
+/* 大文字*/
+.today_text, .month_text, .year_text{
+  font-weight: normal;
+  font-size: 50rpx;
 }
 
+/* 小文字 */
+.mini_text {
+  font-size: 30rpx;
+  color: #808080;
+  margin-bottom: 15rpx;
+  margin-right: 20rpx;
+
+}
+
+/* 花费的文字 */
 .today_cost{
-  margin-top: 15rpx;
   color: green;
 } 
 .month_cost{
-  margin-top: 15rpx;
   color: blue;
 } 
 .year_cost{
-  margin-top: 15rpx;
   color: red;
 }
 

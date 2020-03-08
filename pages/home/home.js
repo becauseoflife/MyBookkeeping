@@ -1,13 +1,14 @@
 // pages/home/home.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    todayExpend: '0',
-    monthExpend: '0',
-    yearExpend:  '0',
+    todayCost: '0',
+    monthCost: '0',
+    yearCost:  '0',
     todayRecord: [],
   },
 
@@ -48,7 +49,40 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // 获取首页的数据
+    var that = this;
+    wx.request({
+      url: 'http://192.168.1.89:8080/userOperation/getHomePageData',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'sessionId': app.globalData.sessionId
+      },
+      success: function (res) {
+        console.log(res.data);
+        var resData = res.data;
+        // 设置界面的数据
+        if (resData.status == 200) {
+          that.setData({
+            todayCost: resData.data.todayCost,
+            monthCost: resData.data.monthCost,
+            yearCost: resData.data.yearCost
+          })
+        }
+        else if (resData.status == 500) {
+          // 显示提示
+          wx.showToast({
+            title: resData.msg,
+            icon: 'none',
+            duration: 1000
+          });
+        }
+      },
+      fail: function (res) {
+        console.log(res.data);
+      }
 
+    })
   },
 
   /**
