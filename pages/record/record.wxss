@@ -3,22 +3,32 @@ page{
   background-color:#EDEDED; 
 }
 
-/**/
-.weui-form-preview__hd{
-  padding: 5px;
-}
-.weui-form-preview__bd {
-  padding: 5px;
+/* 一栏大小 */
+.weui-cell{
+  padding: 6px;
 }
 
-.weui-form-preview__ft{
-  line-height: 50px;
+/* 图片 */
+.weui-cell__hd{
+  margin-left: 10px; 
 }
 
-.update-btn{
-  color: blue
+/* 种类的文字 */
+.type-text{
+  margin-bottom:2px; 
 }
 
-.delete-btn{
-  color: red;
+/* 末尾的数字 */
+.weui-cell:before{
+  border: none;
+}
+
+.weui-cell__ft {
+  color: #000
+}
+
+/* 底线 */
+.weui-cells:after{
+  border-bottom: 5rpx solid rgba(0,0,0,.1);
+
 }

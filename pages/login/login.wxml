@@ -32,7 +32,12 @@
     <!--注册-->
     <view class="register-view">
       <navigator class="register-nav" url="../register/register">---{{'>'}}立即注册{{'<'}}---</navigator>
-    </view>  
+    </view> 
 
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-footer">
+        <view class="weui-footer__text">Copyright © 2020/03/08 panpan</view>
     </view>
+  </view>
 </view>

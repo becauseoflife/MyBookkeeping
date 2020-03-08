@@ -31,7 +31,7 @@
 /* 小文字 */
 .mini_text {
   font-size: 30rpx;
-  color: #808080;
+  color: #888888;
   margin-bottom: 15rpx;
   margin-right: 20rpx;
 
