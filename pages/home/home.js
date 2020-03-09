@@ -35,6 +35,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     // 获取首页的数据
     var that = this;
     wx.request({
@@ -44,11 +58,11 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
         'sessionId': app.globalData.sessionId
       },
-      success: function(res){
+      success: function (res) {
         console.log(res.data);
         var resData = res.data;
         // 设置界面的数据
-        if(resData.status == 200){
+        if (resData.status == 200) {
           that.setData({
             todayCost: resData.data.todayCost,
             monthCost: resData.data.monthCost,
@@ -64,25 +78,11 @@ Page({
           });
         }
       },
-      fail: function(res){
+      fail: function (res) {
         console.log(res.data);
       }
 
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**

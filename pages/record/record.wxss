@@ -16,6 +16,7 @@ page{
 /* 种类的文字 */
 .type-text{
   margin-bottom:2px; 
+  font-weight: bold;
 }
 
 /* 末尾的数字 */
@@ -24,7 +25,8 @@ page{
 }
 
 .weui-cell__ft {
-  color: #000
+  color: red;
+  font-weight: bold;
 }
 
 /* 底线 */

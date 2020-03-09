@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/record/record",
+
     "pages/login/login",
     "pages/register/register",
     "pages/home/home",
     "pages/news/news",
     "pages/user/user",
-
+    "pages/record/record",
     "pages/bookkeeping/bookkeeping",
     "pages/limit/limit",
     "pages/savemoney/savemoney"
