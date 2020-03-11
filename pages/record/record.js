@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    typeImgArray: [{}]
   },
 
   /**
@@ -39,7 +40,8 @@ Page({
         if(resData.status == 200){
           // 设置数据
           that.setData({
-            list: resData.data.sort(that.compare('date'))
+            list: resData.data.sort(that.compare('date')),
+            typeImgArray: app.globalData.typeImgArray
           })
         }
         else if(resData.status == 500){

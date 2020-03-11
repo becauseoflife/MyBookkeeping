@@ -6,7 +6,18 @@ App({
   globalData: {
     sessionId: '',    // 用户sessionId
     expiredTime: '',  // sessionId的保存时间
-    typeArray: ['饮食', '购物', '交通', '娱乐', '学习']   // 记账的种类
+    typeArray: ['饮食', '购物', '交通', '娱乐', '学习', '话费', '旅游', '医疗', '水电'],   // 记账的种类
+    typeImgArray: [
+      '/image/type_food.png',
+      '/image/type_shopping.png',
+      '/image/type_traffic.png',
+      '/image/type_entertainment.png',
+      '/image/type_study.png',
+      '/image/type_telephone Bill.png',
+      '/image/type_travel.png',
+      '/image/type_hospital.png',
+      '/image/type_waterPower.png'
+    ],                                          // 种类对应的图片
   },
 
   /**

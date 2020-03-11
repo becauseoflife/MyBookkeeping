@@ -11,6 +11,7 @@ Page({
     time: '',       // 时间选择器
     cost: '',       // 花费
     typeArray: [],  // 记账的种类
+    typeImgArray: [], // 记账种类的图片位置
     typeIndex: 0,
   },
 
@@ -33,7 +34,7 @@ Page({
   bindPickerChange: function (e) {
     //console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      typeIndex: e.detail.value
     })
   },
 
@@ -67,7 +68,8 @@ Page({
         'date': date,
         'time': time,
         'cost': cost,
-        'type': that.data.typeArray[typeIndex]
+        'type': that.data.typeArray[typeIndex],
+        'imgPath': that.data.typeImgArray[typeIndex]
       },
       success: function(res){
         console.log(res.data)
@@ -127,7 +129,8 @@ Page({
     });
     // 设置记账的种类
     this.setData({
-      typeArray: app.globalData.typeArray
+      typeArray: app.globalData.typeArray,
+      typeImgArray: app.globalData.typeImgArray
     });
 
   },
