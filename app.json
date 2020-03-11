@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/login/login",
     "pages/register/register",
     "pages/home/home",
@@ -9,7 +8,8 @@
     "pages/record/record",
     "pages/bookkeeping/bookkeeping",
     "pages/limit/limit",
-    "pages/savemoney/savemoney"
+    "pages/savemoney/savemoney",
+    "pages/charts/charts"
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -45,5 +45,5 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "debug":true
+  "debug": true
 }

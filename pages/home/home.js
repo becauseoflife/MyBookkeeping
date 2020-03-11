@@ -27,7 +27,7 @@ Page({
   // 跳转到饼状图
   lookPieChart:function(){
     wx.navigateTo({
-      url: '',
+      url: '../charts/charts',
     })
   },
   

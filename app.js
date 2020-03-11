@@ -4,8 +4,9 @@ App({
    * 全局变量
    */
   globalData: {
-    sessionId: '',
-    expiredTime: '',
+    sessionId: '',    // 用户sessionId
+    expiredTime: '',  // sessionId的保存时间
+    typeArray: ['饮食', '购物', '交通', '娱乐', '学习']   // 记账的种类
   },
 
   /**

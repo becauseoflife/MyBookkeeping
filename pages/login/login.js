@@ -15,6 +15,11 @@ Page({
    * 监听事件函数
    */
   loginSubmit:function(e){
+
+    // wx.switchTab({
+    //   url: '../home/home',
+    // })
+
     console.log(e.detail.value);
     var formData = e.detail.value;
     var {account, password} = formData;     // 赋值

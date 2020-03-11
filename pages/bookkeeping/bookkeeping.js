@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '',
-    time: '',
-    cost: '',
-    typeArray: ['饮食', '购物', '交通', '娱乐', '学习'],
+    date: '',       // 日期选择器
+    time: '',       // 时间选择器
+    cost: '',       // 花费
+    typeArray: [],  // 记账的种类
     typeIndex: 0,
   },
 
@@ -125,6 +125,11 @@ Page({
     this.setData({
       time: nowTime
     });
+    // 设置记账的种类
+    this.setData({
+      typeArray: app.globalData.typeArray
+    });
+
   },
 
   /**
