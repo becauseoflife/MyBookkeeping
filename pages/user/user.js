@@ -1,16 +1,17 @@
 // pages/user/user.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userNetName: ''
   },
 
   // 退出登录
   outLogin:function(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../login/login',
     })
   },
@@ -20,7 +21,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var NetName = wx.getStorageSync('USER_NET_NAME');
+    this.setData({
+      userNetName: NetName
+    })
   },
 
   /**

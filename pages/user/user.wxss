@@ -1,4 +1,3 @@
-/* pages/user/user.wxss */
 page{
   background-color:#EDEDED; 
 }
@@ -14,6 +13,7 @@ page{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fff;
 }
 
 .userinfo {

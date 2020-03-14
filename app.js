@@ -4,6 +4,7 @@ App({
    * 全局变量
    */
   globalData: {
+    userNetName: '',  // 用户的的昵称
     sessionId: '',    // 用户sessionId
     expiredTime: '',  // sessionId的保存时间
     typeArray: ['饮食', '购物', '交通', '娱乐', '学习', '话费', '旅游', '医疗', '水电'],   // 记账的种类

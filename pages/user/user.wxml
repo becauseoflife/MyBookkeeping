@@ -1,37 +1,37 @@
 <!--pages/user/user.wxml-->
 <view class="page">
-  <view class="page__hd">
-    <view class="userinfo">
-      <button wx:if="" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="/image/icon_user_HL.png" mode="cover"></image>
-        <text class="userinfo-nickname">名字名字名字</text>
-      </block>
-    </view>
-  </view>
-  <view class="page__bd">
-    <view class="weui-cells weui-cells_after-title">
-      <navigator url="../savemoney/savemoney" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">心愿存钱</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </navigator>
-      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <view class="weui-cell__bd">修改密码</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </navigator>
-      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <view class="weui-cell__bd">编辑个人信息</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </navigator>
-      <navigator url="../limit/limit" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <view class="weui-cell__bd">设置最大支出额度</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </navigator>
-      <view class="weui-cells weui-cells_after-title out-login" bindtap="outLogin">
-        <view class="weui-cell">
-          <view class="weui-cell__bd">退出登录</view>
+    <view class="page__hd">
+        <view class="userinfo">
+            <block>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="/image/icon_user_HL.png" mode="cover"/>
+                <text class="userinfo-nickname">{{userNetName}}</text>
+            </block>
         </view>
-      </view>
     </view>
-  </view>
+
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="../savemoney/savemoney" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">心愿存钱</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">修改密码</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">编辑个人信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="../limit/limit" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">设置最大支出额度</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <view class="weui-cells weui-cells_after-title out-login" bindtap="outLogin">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">退出登录</view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>

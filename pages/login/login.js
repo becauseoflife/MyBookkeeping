@@ -69,6 +69,10 @@ Page({
               })
             }, 1500);
 
+            // 保存用户的昵称
+            app.globalData.userNetName = resData.data.userNetName;
+            wx.setStorageSync('USER_NET_NAME', resData.data.userNetName);
+
             // 把 SessionId 和过期时间放在内存中的全局对象和本地缓存里边
             app.globalData.sessionId = resData.data.sessionId;
             wx.setStorageSync('SESSIONID', resData.data.sessionId);
