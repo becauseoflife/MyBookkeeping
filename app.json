@@ -9,7 +9,8 @@
     "pages/bookkeeping/bookkeeping",
     "pages/limit/limit",
     "pages/savemoney/savemoney",
-    "pages/charts/charts"
+    "pages/charts/charts",
+    "pages/changepwd/changepwd"
   ],
   "tabBar": {
     "color": "#7A7E83",

@@ -1,0 +1,9 @@
+/* pages/changepwd/changepwd.wxss */
+
+
+/*提交按钮*/
+.weui-btn{
+  background-color: blue;
+  width: 100%;
+  margin-top: 50px;
+}
