@@ -18,7 +18,7 @@
                         <view class="weui-label">新密码</view>
                     </view>
                     <view class="weui-cell__bd">
-                        <input class="weui-input" name="newPwd" placeholder="请输入新密码"/>
+                        <input class="weui-input" name="newPwd" type="password" placeholder="请输入新密码"/>
                     </view>
                 </view>
                 <!-- 确认新密码 -->
@@ -27,7 +27,7 @@
                         <view class="weui-label">确认新密码</view>
                     </view>
                     <view class="weui-cell__bd">
-                        <input class="weui-input" name="okPwd" placeholder="请确认新密码"/>
+                        <input class="weui-input" name="okPwd" type="password" placeholder="请确认新密码"/>
                     </view>
                 </view>
             </view>
