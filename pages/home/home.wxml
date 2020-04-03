@@ -3,15 +3,15 @@
   <view class="page__hd">
     <view class="today_view">
       <view class="today_text">今日</view><text class="mini_text">总支出</text>
-      <view class="today_cost">￥:{{todayCost}}</view>
+      <view class="today_cost">￥: {{todayCost}}</view>
     </view>
     <view class="month_view">
       <view class="month_text">本月</view><text class="mini_text">总支出</text>
-      <view class="month_cost">￥:{{monthCost}}</view>
+      <view class="month_cost">￥: {{monthCost}}</view>
     </view>
     <view class="year_view">
       <view class="year_text">本年</view><text class="mini_text">总支出</text>
-      <view class="year_cost">￥:{{yearCost}}</view>
+      <view class="year_cost">￥: {{yearCost}}</view>
     </view>
   </view>
   <view class="page__bd page__bd_spacing">

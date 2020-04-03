@@ -1,9 +1,0 @@
-/* pages/limit/limit.wxss */
-page{
-  background-color:#EDEDED; 
-}
-
-/*提交按钮*/
-.btn-view{
-  margin-top:20%; 
-}

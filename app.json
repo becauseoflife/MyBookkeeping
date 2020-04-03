@@ -7,7 +7,7 @@
     "pages/user/user",
     "pages/record/record",
     "pages/bookkeeping/bookkeeping",
-    "pages/limit/limit",
+    "pages/limitcost/limitcost",
     "pages/savemoney/savemoney",
     "pages/charts/charts",
     "pages/changepwd/changepwd"

@@ -1,0 +1,36 @@
+<!--pages/limit/limit.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="week_view">
+            <view class="week_text">本周</view><text class="mini_text">最大支出</text>
+            <view class="week_cost">￥: {{weekMaxCost}}</view>
+        </view>
+        <view class="month_view">
+            <view class="month_text">本月</view><text class="mini_text">最大支出</text>
+            <view class="month_cost">￥: {{monthMaxCost}}</view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <form bindsubmit="limitSubmit">
+            <view class="weui-cells__title">本周最大额度</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell ">
+                    <view class="weui-cell__bd">
+                        <input name="weekMaxCost" value="{{weekMaxCostInput}}" class="weui-input" placeholder="请输入本周最大额度" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells__title">本月最大额度</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell ">
+                    <view class="weui-cell__bd">
+                        <input name="monthMaxCost" value="{{monthMaxCostInput}}" class="weui-input" placeholder="请输入本月最大额度" />
+                    </view>
+                </view>
+            </view>
+            <view class="btn-view">
+                <button class="weui-btn" type="primary" form-type="submit">点击提交</button>
+            </view>
+        </form>
+    </view>
+</view>

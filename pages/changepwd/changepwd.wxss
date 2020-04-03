@@ -1,5 +1,7 @@
 /* pages/changepwd/changepwd.wxss */
-
+page{
+  background-color:#EDEDED; 
+}
 
 /*提交按钮*/
 .weui-btn{

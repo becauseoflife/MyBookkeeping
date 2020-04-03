@@ -18,7 +18,9 @@ App({
       '/image/type_travel.png',
       '/image/type_hospital.png',
       '/image/type_waterPower.png'
-    ],                                          // 种类对应的图片
+    ],                                          // 种类对应的图片的路由
+    weekMaxCost: '',    // 本周最大花费
+    monthMaxCost: ''    // 本月最大花费
   },
 
   /**

@@ -23,7 +23,7 @@
                 <view class="weui-cell__bd">编辑个人信息</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
-            <navigator url="../limit/limit" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="../limitcost/limitcost" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">设置最大支出额度</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
