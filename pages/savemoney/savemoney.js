@@ -59,18 +59,48 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     // 读出心愿存钱
     var wishMoney = wx.getStorageSync('wishMoney');
     if(wishMoney){
       this.setData({
         showWishMoney: wishMoney
       })
-    }else{
-      this.setData({
-        showWishMoney: '错误'
-      })
     }
+
+    // 从服务器中获取心愿存钱数
+    wx.request({
+      url: 'http://192.168.1.89:8080/userOperation/getWishMoney',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'sessionId': app.globalData.sessionId
+      },
+      success: function(res){
+        console.log(res)
+        var resData = res.data
+        if(resData.status == 200){
+          // 判断是否被设置
+          if(resData.data >= 0){
+            // 显示
+            that.setData({
+              showWishMoney: resData.data
+            })
+            // 保存到缓存中
+            wx.setStorageSync('wishMoney', wishMoney);
+          }else{
+            that.setData({
+              showWishMoney: '--'
+            })
+          }
+        }
+      },
+      fail: function(res){
+        console.log(res.data)
+      }
+    })
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
