@@ -54,6 +54,29 @@ Page({
         duration: 1000
       })
     }
+    // 判断是否超过指定额度
+    var weekCost = parseFloat(wx.getStorageSync('weekCost')) + parseFloat(cost)
+    var monthCost = parseFloat(wx.getStorageSync('monthCost')) + parseFloat(cost)
+    if (monthCost > app.globalData.monthMaxCost) {
+      wx.showModal({
+        title: '本月消费超额提醒',
+        content: '请注意！您本月的消费：' + monthCost + '\r\n超出了您设置的本周最大支出额度：\r\n' + app.globalData.monthMaxCost,
+        confirmText: '我知道了',
+        showCancel: false
+      })
+    }
+    if(weekCost > app.globalData.weekMaxCost){
+      wx.showModal({
+        title: '本周消费超额提醒',
+        content: '请注意！您本周的消费：' + weekCost + '\r\n超出了您设置的本周最大支出额度：\r\n' + app.globalData.weekMaxCost,
+        confirmText: '我知道了',
+        showCancel: false
+      })
+    }
+
+    // 更新缓存中的周和月花费
+    wx.setStorageSync('weekCost', weekCost)
+    wx.setStorageSync('monthCost', monthCost)
 
 
     // 发送到服务器保存
@@ -132,6 +155,34 @@ Page({
       typeArray: app.globalData.typeArray,
       typeImgArray: app.globalData.typeImgArray
     });
+
+    // 获取周花费和月花费
+    wx.request({
+      url: 'http://192.168.1.89:8080/userOperation/getWeekMonthCost',
+      menthod: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'sessionId': app.globalData.sessionId
+      },
+      success: function (res) {
+        console.log(res.data)
+        var resData = res.data;
+        if (resData.status == 200) {
+          wx.setStorageSync('weekCost', resData.data.weekCost)
+          wx.setStorageSync('monthCost', resData.data.monthCost)
+        }
+        else if(resData.status == 500){
+          wx.showToast({
+            title: resData.msg,
+            icon: 'none',
+            duration: 1000
+          }) 
+        }
+      },
+      fail: function (res) {
+        console.log(res.data)
+      }
+    })
 
   },
 
