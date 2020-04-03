@@ -1,19 +1,25 @@
 <!--pages/savemoney/savemoney.wxml-->
 <view class="page">
-  <view class="page__hd">
-    <view class="money-view">
-      <view>总额度</view>
-      <view class="savemoney">￥{{showWishMoney}}</view>
+    <view class="page__hd show-wish-money">
+        <view class="wish_view">
+            <view class="wish_text">心愿存钱</view><text class="mini_text">总额度</text>
+            <view class="wish_cost">￥: {{showWishMoney}}</view>
+        </view>
     </view>
-  </view>
-  <view class="page__bd">
-      <form calss="submint-form" bindsubmit="saveMoneySubmit">
-          <view class="weui-cell__bd input_view">
-              <input class="weui-input" name="wishMoney" bindinput="" type="number" placeholder="请输入心愿存钱数" />
-          </view>
-          <view class="btn-view">
-              <button class="weui-btn" type="primary" form-type="submit">点击提交</button>
-          </view>
-      </form>
-  </view>
+    <view class="page__bd input-wish">
+        <form bindsubmit="saveMoneySubmit">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell ">
+                    <view class="weui-cell__bd">
+                        <input name="wishMoney" value="{{wishMoney}}" class="weui-input" type="number" placeholder="请输入心愿存钱数" />
+                    </view>
+                </view>
+            </view>
+            <!-- 提交按钮 -->
+            <view class="btn-view">
+                <button class="weui-btn" type="primary" form-type="submit">点击提交</button>
+            </view>
+        </form>
+    </view>
+
 </view>

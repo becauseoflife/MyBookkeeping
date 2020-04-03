@@ -55,23 +55,29 @@ Page({
       })
     }
     // 判断是否超过指定额度
-    var weekCost = parseFloat(wx.getStorageSync('weekCost')) + parseFloat(cost)
-    var monthCost = parseFloat(wx.getStorageSync('monthCost')) + parseFloat(cost)
-    if (monthCost > app.globalData.monthMaxCost) {
-      wx.showModal({
-        title: '本月消费超额提醒',
-        content: '请注意！您本月的消费：' + monthCost + '\r\n超出了您设置的本周最大支出额度：\r\n' + app.globalData.monthMaxCost,
-        confirmText: '我知道了',
-        showCancel: false
-      })
+    // 判断是否设置了额度限制
+    if(app.globalData.weekMaxCost >= 0){
+      var weekCost = parseFloat(wx.getStorageSync('weekCost')) + parseFloat(cost)
+      if (monthCost > app.globalData.monthMaxCost) {
+        wx.showModal({
+          title: '本月消费超额提醒',
+          content: '请注意！您本月的消费：' + monthCost + '\r\n超出了您设置的本周最大支出额度：\r\n' + app.globalData.monthMaxCost,
+          confirmText: '我知道了',
+          showCancel: false
+        })
+      }
     }
-    if(weekCost > app.globalData.weekMaxCost){
-      wx.showModal({
-        title: '本周消费超额提醒',
-        content: '请注意！您本周的消费：' + weekCost + '\r\n超出了您设置的本周最大支出额度：\r\n' + app.globalData.weekMaxCost,
-        confirmText: '我知道了',
-        showCancel: false
-      })
+    // 判断是否开启了额度限制
+    if(app.globalData.monthMaxCost >= 0){
+      var monthCost = parseFloat(wx.getStorageSync('monthCost')) + parseFloat(cost)
+      if(weekCost > app.globalData.weekMaxCost){
+        wx.showModal({
+          title: '本周消费超额提醒',
+          content: '请注意！您本周的消费：' + weekCost + '\r\n超出了您设置的本周最大支出额度：\r\n' + app.globalData.weekMaxCost,
+          confirmText: '我知道了',
+          showCancel: false
+        })
+      }
     }
 
     // 更新缓存中的周和月花费

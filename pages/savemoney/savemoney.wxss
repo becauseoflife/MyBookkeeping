@@ -1,44 +1,53 @@
 /* pages/savemoney/savemoney.wxss */
-.page{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+page{
+  background-color:#EDEDED; 
 }
 
 /*显示文字*/
-.page__hd{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30%;
-}
-
-.money-view{
+.show-wish-money{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap:wrap;
+  margin-top: 10%;
+  background: #ffffff;
 }
 
-.savemoney{
-  margin-top: 15rpx;
-  color: red;
-}
-
-/*输入框 */
-.input_view{
-  width: 57%;
-  height: 80rpx;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 15%;
+/* 心愿存钱显示的view */
+.wish_view{
   display: flex;
+  flex-direction: row;
+  justify-content: first-start;
   align-items: center;
+  margin: 20rpx 40rpx;
+  
+}
+
+/* 大文字*/
+.wish_text{
+  font-weight: normal;
+  font-size: 50rpx;
+}
+
+/* 小文字 */
+.mini_text {
+  font-size: 30rpx;
+  color: #888888;
+  margin-bottom: 15rpx;
+  margin-right: 20rpx;
+}
+
+/* 心愿存钱显示的文字 */
+.wish_cost{
+  color:blue;
+} 
+
+/* 输入区域 */
+.input-wish{
+  margin-top: 50px;
 }
 
 /*提交按钮*/
 .btn-view{
-  margin-top: 8%;
+  margin-top:15%; 
 }

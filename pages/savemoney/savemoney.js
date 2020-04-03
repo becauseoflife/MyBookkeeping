@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showWishMoney: '0'
+    showWishMoney: '0',   // 心愿存钱展示
+    input: ''
   },
 
   saveMoneySubmit: function(e){
@@ -32,7 +33,8 @@ Page({
           // 保存到缓存中
           wx.setStorageSync('wishMoney', wishMoney);
           that.setData({
-            showWishMoney: wishMoney
+            showWishMoney: wishMoney,
+            input: ''
           })
           // 显示
           wx.showToast({
