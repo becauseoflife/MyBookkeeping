@@ -11,7 +11,9 @@
     "pages/limitcost/limitcost",
     "pages/savemoney/savemoney",
     "pages/charts/charts",
+    "pages/changeuserinfo/changeuserinfo",
     "pages/changepwd/changepwd"
+
   ],
   "tabBar": {
     "color": "#7A7E83",

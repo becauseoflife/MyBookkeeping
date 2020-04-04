@@ -94,9 +94,23 @@ Page({
             })
           }
         }
+        // 服务器错误
+        if(resData.status == 500){
+          wx.showModal({
+            title: '错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
+          })
+        }
       },
       fail: function(res){
-        console.log(res.data)
+        wx.showModal({
+          title: '错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
     })
   },

@@ -11,20 +11,24 @@
 
     <view class="page__bd">
         <view class="weui-cells weui-cells_after-title">
+            <!-- 心愿存钱功能 -->
             <navigator url="../savemoney/savemoney" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">心愿存钱</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
+            <!-- 修改密码功能 -->
             <navigator url="../changepwd/changepwd" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">修改密码</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">编辑个人信息</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </navigator>
+            <!-- 设置最大支出额度 -->
             <navigator url="../limitcost/limitcost" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">设置最大支出额度</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <!-- 修改个人信息（昵称和手机号） -->
+            <navigator url="../changeuserinfo/changeuserinfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">编辑个人信息</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
             <view class="weui-cells weui-cells_after-title out-login" bindtap="outLogin">

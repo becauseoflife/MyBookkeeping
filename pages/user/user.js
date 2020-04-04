@@ -21,10 +21,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var NetName = wx.getStorageSync('USER_NET_NAME');
-    this.setData({
-      userNetName: NetName
-    })
+    // var netName = wx.getStorageSync('USER_NET_NAME');
+    // console.log(netName)
+    // this.setData({
+    //   userNetName: netName
+    // })
   },
 
   /**
@@ -38,7 +39,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var netName = wx.getStorageSync('USER_NET_NAME');
+    console.log(netName)
+    this.setData({
+      userNetName: netName
+    })
   },
 
   /**

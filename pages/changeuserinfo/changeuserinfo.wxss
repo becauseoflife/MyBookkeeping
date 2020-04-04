@@ -1,0 +1,9 @@
+/* pages/changeuserinfo/changeuserinfo.wxss */
+page{
+  background-color:#EDEDED; 
+}
+
+/* 修改按钮 */
+.weui-btn{
+  margin-top: 50px;
+}
