@@ -85,16 +85,22 @@ Page({
 
           // 账号不存在 或 密码错误
           else if(res.data.status == 500){
-            wx.showToast({
-              title: resData.msg,
-              icon: 'none',
-              duration: 2000
+            wx.showModal({
+              title: '服务器错误',
+              content: resData.msg,
+              confirmText: '我知道了',
+              showCancel: false
             })
           }
         },
         fail: function () {
           // 发生网络错误等情况触发
-          console.log("网络请求失败");
+          wx.showModal({
+            title: '网络错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
+          })
         }
       })
       

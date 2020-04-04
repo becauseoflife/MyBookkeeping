@@ -6,8 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [],
-    typeImgArray: [{}]
+    list: [],         // 历史记录数组
   },
 
   /**
@@ -26,7 +25,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    console.log(that.data.list);
+    var list = wx.getStorageSync("list")
+    if (list) { // 本地如果有缓存列表，提前渲染
+      that.setData({
+        list: list
+      })
+    }
+    // 向服务器获取数据
     wx.request({
       url: 'http://192.168.1.89:8080/userOperation/getRecord',
       method: 'GET',
@@ -38,28 +43,33 @@ Page({
         console.log(res.data);
         var resData = res.data;
         if(resData.status == 200){
+          var resList = resData.data.sort(that.compare('date'))
           // 设置数据
           that.setData({
-            list: resData.data.sort(that.compare('date')),
-            typeImgArray: app.globalData.typeImgArray
+            list: resList,
           })
+          // 保存到本地缓存
+          wx.setStorageSync('list', resList)
         }
         else if(resData.status == 500){
           // 显示提示
-          wx.showToast({
-            title: resData.msg,
-            icon: 'none',
-            duration: 1000
-          });
+          wx.showModal({
+            title: '网络错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
+          })
         }
       },
       fail: function(res){
         // 显示提示
-        wx.showToast({
-          title: '请检查网络',
-          icon: 'none',
-          duration: 1000
-        });
+        // 发生网络错误等情况触发
+        wx.showModal({
+          title: '网络错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
         
       }
     })

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    series: [],
+    series: [],   // 饼状图数据数列
   },
   // 饼状图模块点击事件，显示该部分的类别
   touchHandler: function (e) {
@@ -66,14 +66,23 @@ Page({
             })
           }
         }else if(resData.status == 500){
-          wx.showToast({
-            title: resData.msg,
+          // 显示错误信息
+          wx.showModal({
+            title: '网络错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
           })
         }
       },
       fail: function(res){
-        console.log('请检查网络')
-        console.log(res.data);
+        // 发生网络错误等情况触发
+        wx.showModal({
+          title: '网络错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
     })
 

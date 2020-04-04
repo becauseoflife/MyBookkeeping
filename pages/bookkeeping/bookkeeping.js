@@ -12,7 +12,7 @@ Page({
     cost: '',       // 花费
     typeArray: [],  // 记账的种类
     typeImgArray: [], // 记账种类的图片位置
-    typeIndex: 0,
+    typeIndex: 0,   // 种类类型的下标
   },
 
   /**
@@ -126,16 +126,22 @@ Page({
           });
         }else if(resData.status == 500){
           // 显示提示
-          wx.showToast({
-            title: resData.msg,
-            icon: 'success',
-            duration: 1000
-          });
+          wx.showModal({
+            title: '服务器错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
+          })
         }
          
       },
       fail: function(res){
-        console.log("失败：" + res.data)
+        wx.showModal({
+          title: '网络错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
 
     })

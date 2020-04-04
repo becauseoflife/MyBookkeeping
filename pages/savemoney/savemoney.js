@@ -7,7 +7,7 @@ Page({
    */
   data: {
     showWishMoney: '0',   // 心愿存钱展示
-    input: ''
+    input: ''       // 输入框的值
   },
 
   saveMoneySubmit: function(e){
@@ -43,13 +43,22 @@ Page({
             duration: 1000
           })
         }else if(resData == 500){
-          wx.showToast({
-            title: resData.msg,
+          wx.showModal({
+            title: '服务器错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
           })
         }
       },
       fail: function(res){
         console.log(res.data)
+        wx.showModal({
+          title: '网络错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
     })
 

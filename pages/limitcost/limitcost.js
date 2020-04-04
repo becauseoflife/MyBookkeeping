@@ -118,16 +118,22 @@ Page({
           wx.setStorageSync('monthMaxCost', resData.data.monthMaxCost)
         }
         else if(resData.status == 500){
-          wx.showToast({
-            title: resData.msg,
-            icon: 'none',
-            duration: 1000
+          wx.showModal({
+            title: '服务器错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
           })
         }
       },
       fail: function(res){
         console.log(res.data)
-        console.log("失败")
+        wx.showModal({
+          title: '网络错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
     })
   },

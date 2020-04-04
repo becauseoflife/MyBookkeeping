@@ -93,11 +93,12 @@ Page({
           }
           // 账户已存在
           else if(res.data.status == 500){
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              duration: 2000
-            });
+            wx.showModal({
+              title: '服务器错误',
+              content: resData.msg,
+              confirmText: '我知道了',
+              showCancel: false
+            })
             // 清空账号输入框的值
             that.setData({
               'inputAccount': '',
@@ -106,7 +107,12 @@ Page({
         },
         fail: function () {
           // 发生网络错误等情况触发
-          console.log("网络请求失败");
+          wx.showModal({
+            title: '网络错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
+          })
         }   
       })
     }

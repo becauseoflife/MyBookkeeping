@@ -6,10 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    todayCost: '0',
-    monthCost: '0',
-    yearCost:  '0',
-    todayRecord: [],
+    todayCost: '0.00',     // 今日总支出
+    monthCost: '0.00',     // 本月总支出
+    yearCost:  '0.00',     // 本年总支出 
   },
 
   //跳转到记账界面
@@ -36,6 +35,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+
     // 从服务器获取消费额度
     wx.request({
       url: 'http://192.168.1.89:8080/userOperation/getLimitCost',
@@ -67,16 +67,21 @@ Page({
           wx.setStorageSync('monthMaxCost', resData.data.monthMaxCost)
         }
         else if (resData.status == 500) {
-          wx.showToast({
-            title: resData.msg,
-            icon: 'none',
-            duration: 1000
+          wx.showModal({
+            title: '服务器错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
           })
         }
       },
       fail: function (res) {
-        console.log(res.data)
-        console.log("失败")
+        wx.showModal({
+          title: '服务器错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
     })
   },
@@ -92,8 +97,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
+
     // 获取首页的数据
-    var that = this;
     wx.request({
       url: 'http://192.168.1.89:8080/userOperation/getHomePageData',
       method: 'GET',
@@ -111,20 +117,29 @@ Page({
             monthCost: resData.data.monthCost,
             yearCost: resData.data.yearCost
           })
+          // 保存到缓存中
+          // wx.setStorageSync('todayCost', resData.data.todayCost)
+          // wx.setStorageSync('monthCost', resData.data.monthCost)
+          // wx.setStorageSync('yearCost', resData.data.yearCost)
         }
         else if (resData.status == 500) {
           // 显示提示
-          wx.showToast({
-            title: resData.msg,
-            icon: 'none',
-            duration: 1000
-          });
+          wx.showModal({
+            title: '服务器错误',
+            content: resData.msg,
+            confirmText: '我知道了',
+            showCancel: false
+          })
         }
       },
       fail: function (res) {
-        console.log(res.data);
+        wx.showModal({
+          title: '服务器错误',
+          content: resData.msg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
-
     })
   },
 
