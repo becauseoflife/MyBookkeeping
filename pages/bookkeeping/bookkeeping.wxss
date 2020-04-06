@@ -45,7 +45,7 @@ page{
 }
 
 .income-text{
-  color: #aaa
+  color: #aaa;
 }
 
 /*提交按钮*/

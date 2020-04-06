@@ -67,7 +67,7 @@ Page({
               wx.switchTab({
                 url: '../home/home',
               })
-            }, 1500);
+            }, 500);
 
             // 保存用户的昵称
             app.globalData.userNetName = resData.data.userNetName;
@@ -86,7 +86,7 @@ Page({
           // 账号不存在 或 密码错误
           else if(res.data.status == 500){
             wx.showModal({
-              title: '服务器错误',
+              title: '错误',
               content: resData.msg,
               confirmText: '我知道了',
               showCancel: false

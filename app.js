@@ -30,7 +30,7 @@ App({
       '/image/income/transfer.png',
     ],
     weekMaxCost: -1,    // 本周最大花费
-    monthMaxCost: -1    // 本月最大花费
+    monthMaxCost: -1,    // 本月最大花费
   },
 
   /**
@@ -48,14 +48,14 @@ App({
 
     // 从缓存中读出限制消费的额度数据
     var getWeekMaxCost = wx.getStorageSync('weekMaxCost')
-    console.log(getWeekMaxCost);
-    if (getWeekMaxCost >= 0) {
+    if (getWeekMaxCost) {
       this.globalData.weekMaxCost = getWeekMaxCost
     }
     var getMonthMaxCost = wx.getStorageSync('monthMaxCost')
-    if (getMonthMaxCost >= 0) {
+    if (getMonthMaxCost) {
       this.globalData.monthMaxCost = getMonthMaxCost
     }
+
 
   },
 

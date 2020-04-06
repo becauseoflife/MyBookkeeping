@@ -11,6 +11,7 @@ Page({
     weekMaxCostInput: '', // 本周最大额度输入
     monthMaxCostInput: '' // 本月最大额度输入
   },
+
   limitSubmit: function(e){
     console.log(e.detail.value)
     var formData = e.detail.value
@@ -53,6 +54,14 @@ Page({
           // 保存数据到本地缓存
           wx.setStorageSync('weekMaxCost', resData.data.weekMaxCost)
           wx.setStorageSync('monthMaxCost', resData.data.monthMaxCost)
+
+          // 设置本周本月提醒开启
+          if(weekMaxCost != ''){
+            wx.setStorageSync('weekMaxCostTip', false)
+          }
+          if(monthMaxCost != ''){
+            wx.setStorageSync('monthMaxCostTip', false)
+          }
         } 
         else if (resData.status == 500) {
           // 显示提示
