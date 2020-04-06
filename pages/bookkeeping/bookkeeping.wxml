@@ -5,7 +5,7 @@
             <view class="weui-cells weui-cells_after-title">
                 <!--日期输入-->
                 <view class="weui-cell ">
-                    <image class="icon-img" src="/image/date.png"></image>
+                    <image class="icon-img" src="/image/bookkeeping/date.png"></image>
                 <view class="weui-cell__hd">
                     <view class="weui-label">日期</view>
                 </view>
@@ -17,7 +17,7 @@
             </view>
             <!--时间输入-->
             <view class="weui-cell ">
-                <image class="icon-img" src="/image/time.png"></image>
+                <image class="icon-img" src="/image/bookkeeping/time.png"></image>
                 <view class="weui-cell__hd">
                     <view class="weui-label">时间</view>
                 </view>
@@ -29,7 +29,7 @@
             </view>
             <!--花费输入-->
             <view class="weui-cell ">
-                <image class="icon-img" src="/image/money.png"></image>
+                <image class="icon-img" src="/image/bookkeeping/money.png"></image>
                 <view class="weui-cell__hd">
                     <view class="weui-label">花费</view>
                 </view>
@@ -39,7 +39,7 @@
             </view>
             <!--分类输入-->
             <view class="weui-cell ">
-                <image class="icon-img" src="/image/type.png"></image>
+                <image class="icon-img" src="/image/bookkeeping/type.png"></image>
                 <view class="weui-cell__hd">
                     <view class="weui-label">分类</view>
                 </view>
@@ -47,6 +47,17 @@
                     <picker name="typeIndex" bindchange="bindPickerChange" value="{{typeIndex}}" range="{{typeArray}}">
                         <view class="weui-input text-color">{{typeArray[typeIndex]}}</view>
                     </picker>
+                </view>
+            </view>
+            <!--种类输入-->
+            <view class="income-pay-weui-cell">
+                <view class="income-pay-view">
+                    <view class="pay-view" style="background-color:{{payBgdColor}}; border-color:{{payBorderColor}}" bindtap="selectPay" data-id="0" >
+                        <text class="pay-text" style="color:{{payTextColor}}" >支出</text>
+                    </view>
+                    <view class="income-view" style="background-color:{{incomeBgdColor}}; border-color:{{incomeBorderColor}}" bindtap="selectIncome" data-id="1">
+                        <text class="income-text" style="color:{{incomeTextColor}}">收入</text>
+                    </view>
                 </view>
             </view>
           </view>

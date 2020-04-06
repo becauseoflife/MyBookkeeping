@@ -6,9 +6,81 @@ Page({
    * 页面的初始数据
    */
   data: {
-    todayCost: '0.00',     // 今日总支出
-    monthCost: '0.00',     // 本月总支出
-    yearCost:  '0.00',     // 本年总支出 
+    todayAllShow: '0.00',     // 今日总支出|总收入 显示
+    monthAllShow: '0.00',     // 本月总支出|总收入 显示
+    yearAllShow: '0.00',      // 本年总支出|总收入 显示
+
+    todayAllStr: '总支出',   // 总支出（默认） ， 总收入
+    monthAllStr: '总支出', 
+    yearAllStr: '总支出',  
+
+    payBgdColor: '#f8e8e8',   // 选中支出 #f8e8e8 未选中 #EDEDED 
+    payBorderColor: 'red',    // 选中 red 未选中 #EDEDED
+    payTextColor: 'red',      // 选中 red 未选中 #aaa
+
+    incomeBgdColor: '#EDEDED',    // 选中收入 #effcef 未选中 #EDEDED
+    incomeBorderColor: '#EDEDED', // 选中 #1aad19 未选中 #EDEDED
+    incomeTextColor: '#aaa',       // 选中 #1aad19 未选中 #aaa
+  },
+
+  // 选择支出
+  selectPay: function (e) {
+    // 改变文字 
+    this.setData({
+      todayAllStr: '总支出',   // 总支出（默认） ， 总收入
+      monthAllStr: '总支出',
+      yearAllStr: '总支出',  
+    })
+    // 从缓存中读取总支出
+    var todayCost = wx.getStorageSync('todayCost')
+    var monthCost = wx.getStorageSync('monthCost')
+    var yearCost = wx.getStorageSync('yearCost')
+    this.setData({
+      todayAllShow: todayCost,
+      monthAllShow: monthCost,
+      yearAllShow: yearCost
+    })
+    // 颜色的改变
+    this.setData({
+      payBgdColor: '#f8e8e8',   // 选中支出 #f8e8e8 未选中 #EDEDED 
+      payBorderColor: 'red',    // 选中 red 未选中 #EDEDED
+      payTextColor: 'red',      // 选中 red 未选中 #aaa
+    })
+    this.setData({
+      incomeBgdColor: '#EDEDED',    // 选中收入 #effcef 未选中 #EDEDED
+      incomeBorderColor: '#EDEDED', // 选中 #1aad19 未选中 #EDEDED
+      incomeTextColor: '#aaa'       // 选中 #1aad19 未选中 #aaa
+    })
+  },
+
+  // 选择收入
+  selectIncome: function (e) {
+    // 改变文字 
+    this.setData({
+      todayAllStr: '总收入',   // 总支出（默认） ， 总收入
+      monthAllStr: '总收入',
+      yearAllStr: '总收入',
+    })
+    // 从缓存中读取总支出
+    var todayIncome = wx.getStorageSync('todayIncome')
+    var monthIncome = wx.getStorageSync('monthIncome')
+    var yearIncome = wx.getStorageSync('yearIncome')
+    this.setData({
+      todayAllShow: todayIncome,
+      monthAllShow: monthIncome,
+      yearAllShow: yearIncome
+    })
+    // 颜色的改变
+    this.setData({
+      payBgdColor: '#EDEDED',   // 选中支出 #f8e8e8 未选中 #EDEDED 
+      payBorderColor: '#EDEDED',    // 选中 red 未选中 #EDEDED
+      payTextColor: '#aaa',      // 选中 red 未选中 #aaa
+    })
+    this.setData({
+      incomeBgdColor: '#effcef',    // 选中收入 #effcef 未选中 #EDEDED
+      incomeBorderColor: '#1aad19', // 选中 #1aad19 未选中 #EDEDED
+      incomeTextColor: '#1aad19'       // 选中 #1aad19 未选中 #aaa
+    })
   },
 
   //跳转到记账界面
@@ -35,7 +107,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-
     // 从服务器获取消费额度
     wx.request({
       url: 'http://192.168.1.89:8080/userOperation/getLimitCost',
@@ -113,14 +184,18 @@ Page({
         // 设置界面的数据
         if (resData.status == 200) {
           that.setData({
-            todayCost: resData.data.todayCost,
-            monthCost: resData.data.monthCost,
-            yearCost: resData.data.yearCost
+            todayAllShow: resData.data.todayCost,
+            monthAllShow: resData.data.monthCost,
+            yearAllShow: resData.data.yearCost
           })
-          // 保存到缓存中
-          // wx.setStorageSync('todayCost', resData.data.todayCost)
-          // wx.setStorageSync('monthCost', resData.data.monthCost)
-          // wx.setStorageSync('yearCost', resData.data.yearCost)
+          // 保存总支出到缓存中
+          wx.setStorageSync('todayCost', resData.data.todayCost)
+          wx.setStorageSync('monthCost', resData.data.monthCost)
+          wx.setStorageSync('yearCost', resData.data.yearCost)
+          // 保存总收入到缓存中
+          wx.setStorageSync('todayIncome', resData.data.todayIncome)
+          wx.setStorageSync('monthIncome', resData.data.monthIncome)
+          wx.setStorageSync('yearIncome', resData.data.yearIncome)
         }
         else if (resData.status == 500) {
           // 显示提示

@@ -3,7 +3,7 @@
     <view class="page__hd">
         <view class="userinfo">
             <block>
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="/image/icon_user_HL.png" mode="cover"/>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="/image/tabbar/icon_user_HL.png" mode="cover"/>
                 <text class="userinfo-nickname">{{userNetName}}</text>
             </block>
         </view>

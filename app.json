@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+   
     "pages/login/login",
     "pages/register/register",
     "pages/home/home",
@@ -24,20 +24,20 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "image/icon_home.png",
-        "selectedIconPath": "image/icon_home_HL.png"
+        "iconPath": "image/tabbar/icon_home.png",
+        "selectedIconPath": "image/tabbar/icon_home_HL.png"
       },
       {
         "pagePath": "pages/news/news",
         "text": "发现",
-        "iconPath": "image/icon_news.png",
-        "selectedIconPath": "image/icon_news_HL.png"
+        "iconPath": "image/tabbar/icon_news.png",
+        "selectedIconPath": "image/tabbar/icon_news_HL.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "image/icon_user.png",
-        "selectedIconPath": "image/icon_user_HL.png"
+        "iconPath": "image/tabbar/icon_user.png",
+        "selectedIconPath": "image/tabbar/icon_user_HL.png"
       }
     ]
   },

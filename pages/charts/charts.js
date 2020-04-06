@@ -43,7 +43,7 @@ Page({
         'sessionId': app.globalData.sessionId
       },
       data: {
-        'typeArray': app.globalData.typeArray
+        'typeArray': app.globalData.payTypeArray
       },
       success: function(res){
         console.log(res.data);

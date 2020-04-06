@@ -1,7 +1,7 @@
 <!--pages/news/news.wxml-->
 <view class="page-body">
   <view class="page-section page-section-gap">
-    <web-view src="https://v.qq.com/"></web-view>
+    <web-view src="http://www.caijing.com.cn/"></web-view>
   </view>
 </view>
 

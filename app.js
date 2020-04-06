@@ -7,18 +7,28 @@ App({
     userNetName: '',  // 用户的的昵称
     sessionId: '',    // 用户sessionId
     expiredTime: '',  // sessionId的保存时间
-    typeArray: ['饮食', '购物', '交通', '娱乐', '学习', '话费', '旅游', '医疗', '水电'],   // 记账的种类
-    typeImgArray: [
-      '/image/type_food.png',
-      '/image/type_shopping.png',
-      '/image/type_traffic.png',
-      '/image/type_entertainment.png',
-      '/image/type_study.png',
-      '/image/type_telephone Bill.png',
-      '/image/type_travel.png',
-      '/image/type_hospital.png',
-      '/image/type_waterPower.png'
+    payTypeArray: ['饮食', '购物', '交通', '娱乐', '学习', '话费', '旅游', '医疗', '水电'],   // 记账的种类
+    incomeTypeArray: ['生意', '退款', '工资', '奖金', '其他', '红包', '转账'],
+    payTypeImgArray: [
+      '/image/pay/type_food.png',
+      '/image/pay/type_shopping.png',
+      '/image/pay/type_traffic.png',
+      '/image/pay/type_entertainment.png',
+      '/image/pay/type_study.png',
+      '/image/pay/type_telephone Bill.png',
+      '/image/pay/type_travel.png',
+      '/image/pay/type_hospital.png',
+      '/image/pay/type_waterPower.png'
     ],                                          // 种类对应的图片的路由
+    incomeTypeImgArray: [
+      '/image/income/business.png',
+      '/image/income/refund.png',
+      '/image/income/salary.png',
+      '/image/income/bonus.png',
+      '/image/income/other.png',
+      '/image/income/red_paper.png',
+      '/image/income/transfer.png',
+    ],
     weekMaxCost: -1,    // 本周最大花费
     monthMaxCost: -1    // 本月最大花费
   },

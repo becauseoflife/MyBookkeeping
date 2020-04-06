@@ -15,9 +15,41 @@ page{
   color: blue;
 }
 
+/* 收入或者支出的显示 */
+.income-pay-weui-cell
+
+.income-pay-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  padding: 16px;
+}
+
+.pay-view{
+  border: 1px red solid;
+  padding: 0 6px;
+  border-radius: 15px;
+  background-color: #f8e8e8;
+}
+
+.pay-text{
+  color: red;
+}
+
+.income-view{
+  border: 1px #EDEDED solid;
+  padding: 0 6px;
+  border-radius: 15px;
+  background-color: #EDEDED;
+}
+
+.income-text{
+  color: #aaa
+}
+
 /*提交按钮*/
 .weui-btn{
-  background-color: blue;
   width: 100%;
   margin-top: 20px;
 }

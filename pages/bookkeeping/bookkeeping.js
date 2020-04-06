@@ -13,6 +13,16 @@ Page({
     typeArray: [],  // 记账的种类
     typeImgArray: [], // 记账种类的图片位置
     typeIndex: 0,   // 种类类型的下标
+
+    payBgdColor: '#f8e8e8',   // 选中支出 #f8e8e8 未选中 #EDEDED 
+    payBorderColor: 'red',    // 选中 red 未选中 #EDEDED
+    payTextColor: 'red',      // 选中 red 未选中 #aaa
+
+    incomeBgdColor: '#EDEDED',    // 选中收入 #effcef 未选中 #EDEDED
+    incomeBorderColor: '#EDEDED', // 选中 #1aad19 未选中 #EDEDED
+    incomeTextColor: '#aaa',       // 选中 #1aad19 未选中 #aaa
+
+    symbolOfCost: '-'     // 收入 + 支出 -
   },
 
   /**
@@ -38,6 +48,57 @@ Page({
     })
   },
 
+  // 选择支出
+  selectPay: function(e){
+    console.log(e.currentTarget.dataset.id)
+    // 符号
+    this.setData({
+      symbolOfCost: '-'
+    })
+    // 颜色的改变
+    this.setData({
+      payBgdColor: '#f8e8e8',   // 选中支出 #f8e8e8 未选中 #EDEDED 
+      payBorderColor: 'red',    // 选中 red 未选中 #EDEDED
+      payTextColor: 'red',      // 选中 red 未选中 #aaa
+    })
+    this.setData({
+      incomeBgdColor: '#EDEDED',    // 选中收入 #effcef 未选中 #EDEDED
+      incomeBorderColor: '#EDEDED', // 选中 #1aad19 未选中 #EDEDED
+      incomeTextColor: '#aaa'       // 选中 #1aad19 未选中 #aaa
+    })
+    // 设置记账的种类
+    this.setData({
+      typeArray: app.globalData.payTypeArray,
+      typeImgArray: app.globalData.payTypeImgArray
+    });
+  },
+
+  // 选择收入
+  selectIncome: function(e){
+    console.log(e.currentTarget.dataset.id)
+    // 符号
+    this.setData({
+      symbolOfCost: '+'
+    })
+    // 颜色的改变
+    this.setData({
+      payBgdColor: '#EDEDED',   // 选中支出 #f8e8e8 未选中 #EDEDED 
+      payBorderColor: '#EDEDED',    // 选中 red 未选中 #EDEDED
+      payTextColor: '#aaa',      // 选中 red 未选中 #aaa
+    })
+    this.setData({
+      incomeBgdColor: '#effcef',    // 选中收入 #effcef 未选中 #EDEDED
+      incomeBorderColor: '#1aad19', // 选中 #1aad19 未选中 #EDEDED
+      incomeTextColor: '#1aad19'       // 选中 #1aad19 未选中 #aaa
+    })
+    // 设置记账的种类
+    this.setData({
+      typeArray: app.globalData.incomeTypeArray,
+      typeImgArray: app.globalData.incomeTypeImgArray
+    });
+  },
+
+
   // 完成记账提交
   bkpSubmit:function(e){
     console.log(e.detail.value);
@@ -53,11 +114,12 @@ Page({
         icon: 'none',
         duration: 1000
       })
+      return;   // 结束
     }
     // 判断是否超过指定额度
     // 判断是否设置了额度限制
-    if(app.globalData.weekMaxCost >= 0){
-      var weekCost = parseFloat(wx.getStorageSync('weekCost')) + parseFloat(cost)
+    if (app.globalData.weekMaxCost >= 0 && this.data.symbolOfCost == '-'){
+      var monthCost = parseFloat(wx.getStorageSync('monthCost')) + parseFloat(cost)
       if (monthCost > app.globalData.monthMaxCost) {
         wx.showModal({
           title: '本月消费超额提醒',
@@ -67,9 +129,10 @@ Page({
         })
       }
     }
+
     // 判断是否开启了额度限制
-    if(app.globalData.monthMaxCost >= 0){
-      var monthCost = parseFloat(wx.getStorageSync('monthCost')) + parseFloat(cost)
+    if (app.globalData.monthMaxCost >= 0 && this.data.symbolOfCost == '-'){
+      var weekCost = parseFloat(wx.getStorageSync('weekCost')) + parseFloat(cost)
       if(weekCost > app.globalData.weekMaxCost){
         wx.showModal({
           title: '本周消费超额提醒',
@@ -96,9 +159,10 @@ Page({
       data: {
         'date': date,
         'time': time,
-        'cost': cost,
+        'cost': that.data.symbolOfCost + cost,
         'type': that.data.typeArray[typeIndex],
-        'imgPath': that.data.typeImgArray[typeIndex]
+        'imgPath': that.data.typeImgArray[typeIndex],
+        'symbolOfCost': that.data.symbolOfCost
       },
       success: function(res){
         console.log(res.data)
@@ -164,8 +228,8 @@ Page({
     });
     // 设置记账的种类
     this.setData({
-      typeArray: app.globalData.typeArray,
-      typeImgArray: app.globalData.typeImgArray
+      typeArray: app.globalData.payTypeArray,
+      typeImgArray: app.globalData.payTypeImgArray
     });
 
     // 获取周花费和月花费

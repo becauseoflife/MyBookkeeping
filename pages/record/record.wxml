@@ -12,7 +12,7 @@
                         <view style="font-size: 13px;color: #888888;">{{records.date}}</view>
                     </view>
                     <view class="weui-cell">
-                        <view class="weui-cell__ft">-{{records.cost}}</view>
+                        <view class="weui-cell__ft">{{records.cost}}</view>
                     </view>
                 </view>
             </view>
