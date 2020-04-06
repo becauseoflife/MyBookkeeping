@@ -11,6 +11,10 @@ Page({
 
   // 退出登录
   outLogin:function(){
+    // 消除sessionId
+    app.globalData.sessionId = ''
+    wx.setStorageSync('SESSIONID', '')
+    // 回到登录界面
     wx.reLaunch({
       url: '../login/login',
     })
