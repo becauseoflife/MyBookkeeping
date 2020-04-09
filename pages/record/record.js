@@ -27,7 +27,7 @@ Page({
 
   // 选中全部
   selectAll: function(e){
-    console.log(e.currentTarget.dataset.id)
+    //console.log(e.currentTarget.dataset.id)
     // 种类
     var type = e.currentTarget.dataset.id
 
@@ -57,7 +57,7 @@ Page({
 
   // 选择支出
   selectPay: function (e) {
-    console.log(e.currentTarget.dataset.id)
+    //console.log(e.currentTarget.dataset.id)
     // 种类
     var type = e.currentTarget.dataset.id
 
@@ -87,7 +87,7 @@ Page({
 
   // 选择收入
   selectIncome: function (e) {
-    console.log(e.currentTarget.dataset.id)
+    //console.log(e.currentTarget.dataset.id)
     // 种类
     var type = e.currentTarget.dataset.id
 

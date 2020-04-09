@@ -57,10 +57,10 @@ Page({
 
           // 设置本周本月提醒开启
           if(weekMaxCost != ''){
-            wx.setStorageSync('weekMaxCostTip', false)
+            wx.setStorageSync('weekMaxCostNotTip', false)
           }
           if(monthMaxCost != ''){
-            wx.setStorageSync('monthMaxCostTip', false)
+            wx.setStorageSync('monthMaxCostNotTip', false)
           }
         } 
         else if (resData.status == 500) {
