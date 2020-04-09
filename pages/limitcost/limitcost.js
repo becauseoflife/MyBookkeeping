@@ -73,7 +73,13 @@ Page({
         }
       },
       fail: function(res){
-        console.log(res);
+        // 发生网络错误等情况触发
+        wx.showModal({
+          title: '网络错误',
+          content: res.errMsg,
+          confirmText: '我知道了',
+          showCancel: false
+        })
       }
     })
   },

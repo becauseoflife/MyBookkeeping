@@ -62,7 +62,7 @@ Page({
       fail: function(res){
         wx.showModal({
           title: '操作失败',
-          content: res.data.msg,
+          content: res.errMsg,
           confirmText: '我知道了',
           showCancel: false
         })

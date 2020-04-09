@@ -14,17 +14,18 @@
       <view class="year_cost">￥: {{yearAllShow}}</view>
     </view>
   </view>
-          <view class="income-pay-weui-cell">
-                <view class="income-pay-view">
-                    <view class="pay-view" style="background-color:{{payBgdColor}}; border-color:{{payBorderColor}}" bindtap="selectPay" data-id="0" >
-                        <text class="pay-text" style="color:{{payTextColor}}" >支出</text>
-                    </view>
-                    <view class="income-view" style="background-color:{{incomeBgdColor}}; border-color:{{incomeBorderColor}}" bindtap="selectIncome" data-id="1">
-                        <text class="income-text" style="color:{{incomeTextColor}}">收入</text>
-                    </view>
-                </view>
+
+  <view class="income-pay-weui-cell">
+        <view class="income-pay-view">
+            <view class="pay-view" style="background-color:{{payBgdColor}}; border-color:{{payBorderColor}}" bindtap="selectPay" data-id="0" >
+                <text class="pay-text" style="color:{{payTextColor}}" >支出</text>
             </view>
-          
+            <view class="income-view" style="background-color:{{incomeBgdColor}}; border-color:{{incomeBorderColor}}" bindtap="selectIncome" data-id="1">
+                <text class="income-text" style="color:{{incomeTextColor}}">收入</text>
+            </view>
+        </view>
+    </view>
+
   <view class="page__bd page__bd_spacing">
     <button class="weui-btn" type="primary" bindtap="recordEspend">记账</button>
     <button class="weui-btn" type="primary" bindtap="lookRecord">查看历史记录</button>

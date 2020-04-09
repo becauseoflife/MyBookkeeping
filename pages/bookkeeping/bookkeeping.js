@@ -229,7 +229,7 @@ Page({
       fail: function(res){
         wx.showModal({
           title: '网络错误',
-          content: resData.msg,
+          content: res.errMsg,
           confirmText: '我知道了',
           showCancel: false
         })

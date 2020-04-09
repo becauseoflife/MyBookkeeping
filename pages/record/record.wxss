@@ -3,6 +3,53 @@ page{
   background-color:#EDEDED; 
 }
 
+/* 收入或者支出的显示 */
+.income-pay-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  padding: 16px;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+}
+
+/* 全部 */
+.all-look-view{
+  border: 1px #0000ff solid;
+  padding: 0 6px;
+  border-radius: 15px;
+  background-color: #e8eaf8;
+}
+
+.all-look-text{
+  color: #0000ff;
+}
+
+/* 支出 */
+.pay-view{
+  border: 1px red solid;
+  padding: 0 6px;
+  border-radius: 15px;
+  background-color: #f8e8e8;
+}
+
+.pay-text{
+  color: red;
+}
+
+/* 收入 */
+.income-view{
+  border: 1px #EDEDED solid;
+  padding: 0 6px;
+  border-radius: 15px;
+  background-color: #EDEDED;
+}
+
+.income-text{
+  color: #aaa
+}
+
 /* 一栏大小 */
 .weui-cell{
   padding: 6px;
@@ -32,5 +79,4 @@ page{
 /* 底线 */
 .weui-cells:after{
   border-bottom: 5rpx solid rgba(0,0,0,.1);
-
 }

@@ -105,11 +105,11 @@ Page({
             });
           }
         },
-        fail: function () {
+        fail: function (res) {
           // 发生网络错误等情况触发
           wx.showModal({
             title: '网络错误',
-            content: resData.msg,
+            content: res.errMsg,
             confirmText: '我知道了',
             showCancel: false
           })
